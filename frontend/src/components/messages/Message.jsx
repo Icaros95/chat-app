@@ -1,15 +1,29 @@
-const Message = () => {
+import { useAuthContext } from "../../context/AuthContext";
+import useConversation from "../../store/useConversation";
+import { extractTime } from "../../utils/extractTime";
+
+const Message = ({ message }) => {
+  const { authUser } = useAuthContext();
+  const { selectedConversation } = useConversation();
+  const fromMe = message.senderId === authUser._id;
+  const formattedTime = extractTime(message.createdAt);
+  const chatClassName = fromMe ? 'chat-end' : 'chat-start';
+  const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
+  const bubbleBgColor = fromMe ? 'bg-[#8a5a2a]' : '';
+
   return (
-    <div className="chat chat-end">
+    <div className={`chat ${chatClassName}`}>
         <div className="chat-image avatar">
             <div className="w-10 rounded-full">
-                  <img src={"https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} alt="Taildwind chat bubble component" />
+                  <img src={profilePic} alt="Taildwind chat bubble component" />
             </div>
         </div>
-        <div className={"chat-bubble text-white bg-slate-800"}>Hi! What is upp?</div>
-        <div className="chat-footer opacity-50 text-xs flex gat-1 items-center">06:13</div>
+        <div className={`chat-bubble text-white ${bubbleBgColor} pb-2`}>{message.message}</div>
+        <div className="chat-footer opacity-50 text-xs flex gat-1 items-center">
+          {formattedTime}
+        </div>
     </div>
-  )
+  );
 }
 
-export default Message
+export default Message;

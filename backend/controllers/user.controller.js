@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 
 export const getUsersForSidebar = async(req, res) => {
     try {
-      const loggedUserId = req.user._Id;
+      const loggedUserId = req.user._id;
 
       const allFilteredUsers = await User.find({ _id: { $ne: loggedUserId } }).select("-password"); // searches all users in the database except the user itself (the current user)
     
