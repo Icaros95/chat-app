@@ -21,12 +21,12 @@ const useGetConversations = () => {
         } finally {
             setLoading(false);
         }
-    }
+    };
 
     getConversations();
   }, []);
 
   return { loading, conversations };
-}
+};
 
 export default useGetConversations;

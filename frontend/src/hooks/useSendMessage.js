@@ -1,6 +1,6 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 import useConversation from "../store/useConversation";
+import toast from "react-hot-toast";
 
 const useSendMessage = () => {
   const [loading, setLoading] = useState(false);
@@ -11,16 +11,16 @@ const useSendMessage = () => {
     try {
         const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
             method: "POST",
-            headers: {"Content-type": "application/json"},
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({ message })
         });
 
         const data = await res.json();
-        if(!data) {
-            throw new Error(data.message);
+        if(data.error) {
+            throw new Error(data.error);
         }
 
-        setMessages({...messages, data});
+        setMessages([...messages, data]);
 
     } catch (error) {
         toast.error(error.message);
