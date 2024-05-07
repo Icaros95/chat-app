@@ -61,6 +61,8 @@ Este proyecto está bajo la Licencia MIT.
 
 
 ___________________________________________________________________
+
+
 # ChatApp
 ## _MERN Stack Project: Real-Time Chat with React.js and Socket.io_
 
@@ -116,8 +118,10 @@ This project is licensed under the MIT License.
 
 ## Idea
 [Burakorkmez](https://github.com/burakorkmez/mern-chat-app/tree/master?tab=readme-ov-file)
+
 [Free YT Tutorial](https://youtu.be/HwCqsOis894?si=ySwRarmn6imiQ_Xz)
 
 ## You can find me at:
 [LinkedIn - Villarroel Giuliana](www.linkedin.com/in/giuliana-villarroel-67812627a)
+
 [github - Icaros95](https://github.com/Icaros95)
