@@ -53,10 +53,12 @@ Este proyecto está bajo la Licencia MIT.
 
 ## Idea
 [Burakorkmez](https://github.com/burakorkmez/mern-chat-app/tree/master?tab=readme-ov-file)
+
 [Free YT Tutorial](https://youtu.be/HwCqsOis894?si=ySwRarmn6imiQ_Xz)
 
 ## Puedes encontrarme en:
 [LinkedIn - Villarroel Giuliana](www.linkedin.com/in/giuliana-villarroel-67812627a)
+
 [github - Icaros95](https://github.com/Icaros95)
 
 
